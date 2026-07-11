@@ -21,6 +21,8 @@ The untrusted-data-reaches-a-sink pattern behind most real-world attacks:
 - Command injection
 - Path traversal
 - Insecure deserialization
+- Server-side code injection (`exec` / `eval`)
+- ...and more
 
 It has already flagged two critical CVEs in Django.
 
@@ -38,8 +40,8 @@ with far fewer false positives, and can block them at runtime.
    normal Python.
 3. Run your application with `es-python` instead of `python`. Your code and
    libraries run unchanged.
-4. Watch detections on your dashboard, and switch a machine to Raise mode to
-   block risky actions instead of only logging them.
+4. Watch detections on your dashboard, and switch a machine to Report and Raise
+   mode to block risky actions while still logging them.
 
 Full guide: **[eyalsec.com/docs](https://eyalsec.com/docs)**.
 
