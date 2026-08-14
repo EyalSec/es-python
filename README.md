@@ -34,8 +34,8 @@ It has already flagged two critical CVEs in Django.
 
 ## Coverage
 
-Detection is compiled into the interpreter, not bolted on beside it: **162
-sink call sites in C**, plus 11 standard-library hook sites.
+Detection runs inside your program as it executes, not beside it: **173 sink
+call sites**, each watching one dangerous operation.
 
 **Real database drivers, not just `sqlite3`.** `es-python` ships instrumented
 builds of the drivers applications actually use, each with the sink on the
@@ -84,7 +84,7 @@ with far fewer false positives, and can block them at runtime.
 
 **[EyalSec/vulnerable-python](https://github.com/EyalSec/vulnerable-python)** is
 a deliberately vulnerable Flask app where every endpoint wires one taint source
-into one sink. Run the same unchanged file under stock CPython and it is a
+into one sink. Run the same unchanged file under your normal Python and it is a
 normal exploitable app; run it under `es-python` and every attack that reaches a
 sink is reported.
 
