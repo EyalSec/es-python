@@ -6,6 +6,7 @@
 
 [![Website](https://img.shields.io/badge/website-eyalsec.com-e8b04b)](https://eyalsec.com)
 [![Docs](https://img.shields.io/badge/docs-user%20guide-2a2c27)](https://eyalsec.com/docs)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/EyalSec/es-python/badge)](https://scorecard.dev/viewer/?uri=github.com/EyalSec/es-python)
 
 `es-python` is the runtime behind [EyalSec](https://eyalsec.com). You install it
 next to your normal Python and run your existing programs and libraries through
