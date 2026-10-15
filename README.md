@@ -16,7 +16,8 @@ uses it, and either reports the flow to your dashboard or stops the operation.
 
 **Who it is for:** AppSec and security engineers, and the backend teams they
 work with, running Python services (Django, Flask, FastAPI, Celery workers,
-internal tools) that hold data worth stealing.
+internal tools) that hold data worth stealing. Linux, x86_64 and aarch64,
+Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14.
 
 ## What it catches
 
@@ -171,7 +172,8 @@ evidence, and the dangerous operation can be stopped at runtime.
 - **Watching data costs CPU.** The cost grows with the sources you switch on,
   and a file-heavy program watching every file read pays the most. Measure it on
   your own workload.
-- **Linux only**, on x86_64 and aarch64, for Python 3.9 to 3.14.
+- **Linux only**, on x86_64 and aarch64, for Python 3.9, 3.10, 3.11, 3.12, 3.13
+  and 3.14.
 - **Blocking is opt-in.** Report and Raise has to be enabled on your account,
   and at a small number of operations that cannot be interrupted part-way the
   error is raised immediately after the operation instead of before it.
