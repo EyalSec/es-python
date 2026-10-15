@@ -217,8 +217,6 @@ Full walkthrough: **[Quick start](https://eyalsec.com/docs/quick-start)**.
   runtime detection
 - **[Vulnerability guides](https://eyalsec.com/vulnerabilities)**: what each
   injection class looks like in Python code, and how to fix it
-- **[Python injection checker](https://eyalsec.com/tools/python-injection-checker)**:
-  a browser-side tool for checking Python code for injection risks
 - **[Security](https://eyalsec.com/security)**: what leaves your machine, and
   how it is protected
 
