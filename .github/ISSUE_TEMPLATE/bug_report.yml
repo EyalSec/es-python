@@ -1,0 +1,87 @@
+name: Bug report
+description: A flow that was missed, an event that looks wrong, or an install or compatibility problem.
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. Issues are public, so please leave out install commands, API keys and passwords, and replace personal or secret values in an event with `[redacted]`.
+        A security vulnerability in EyalSec itself goes to security@eyalsec.com, not here.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - A flow was not reported (missed detection)
+        - An event fired that should not have (false positive)
+        - An event reads wrong (severity, label, explanation, evidence)
+        - Install or update problem
+        - My program behaves differently under es-python
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: es_python_version
+    attributes:
+      label: es-python version
+      description: The output of `es-python -V`, and the build line from `eyalsec info`.
+      placeholder: "Python 3.13.x; build ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: python_version
+    attributes:
+      label: Python version
+      options: ["3.14", "3.13", "3.12", "3.11", "3.10", "3.9"]
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and architecture
+      description: The `ID` and `VERSION_ID` lines of `/etc/os-release`, and the output of `uname -m`.
+      placeholder: "ubuntu 24.04, x86_64"
+    validations:
+      required: true
+  - type: input
+    id: sources
+    attributes:
+      label: Sources that were on, and how the program was started
+      placeholder: "socket and file on; started with: es-python -m flask run"
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Smallest program that shows it
+      description: Ten lines we can run are worth more than a description. Include the request or input you sent.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: event_json
+    attributes:
+      label: The event JSON
+      description: From `GET /api/event/{id}` (see https://eyalsec.com/docs/api-events#event-detail), or the sink label, severity and source as the dashboard shows them. Leave empty for a missed detection. Redact secrets and personal data first.
+      render: json
+  - type: textarea
+    id: frameworks
+    attributes:
+      label: Frameworks and libraries involved
+      description: Names and versions, for example the lines of `es-python -m pip freeze` that matter. For a database driver, the output of `es-python -m _eyalsec_bridge` helps.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I removed install commands, API keys, passwords and personal data.
+          required: true
+        - label: This is not an unfixed vulnerability in someone else's project.
+          required: true

@@ -1,0 +1,41 @@
+name: Feature request
+description: A library, driver, operation or platform you would like covered, or a change to how the product works.
+title: "[request] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. The clearest requests name one call and say what untrusted data reaches it in a real program.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What is it about?
+      options:
+        - A library or driver to watch
+        - A dangerous operation (sink) to watch
+        - A place untrusted data enters (source)
+        - A distribution, architecture or Python version
+        - How events read or are graded
+        - Install, CI or containers
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: situation
+    attributes:
+      label: Your situation
+      description: What does your program do today, and what would you like to see reported or changed?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: A short example
+      description: The call you want covered, with the library name and version. A few lines of code is ideal.
+      render: python
+  - type: textarea
+    id: today
+    attributes:
+      label: What you do today instead
+      description: Another tool, a manual review, a rule, nothing yet. It helps us see what the change has to be better than.
