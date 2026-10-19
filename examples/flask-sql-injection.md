@@ -51,9 +51,9 @@ the query.
 
 ## Run it under es-python
 
-On the dashboard, open **Configure** for the machine and set the **socket**
-source to **On** (every source starts off). Then start the app the way you
-would with `python`:
+A new machine already watches network input (**socket**); if it was switched
+off, set it to **On** in the machine's **Configure** window. Then start the app
+the way you would with `python`:
 
 ```bash
 es-python app.py
@@ -84,9 +84,9 @@ much damage the sink can do (a database query can do a lot). Opened, its
 > network may use this SQL injection to read or change any data in the
 > database, and get past checks such as who may see which row.
 >
-> **What to do:** Never build SQL by joining strings or with f-strings. Use
-> placeholders (`?` or `%s`) and pass the value as a parameter, so the database
-> always treats it as data.
+> **What to do:** Use placeholders (`?` or `%s`) and pass the value as a
+> parameter rather than joining strings or f-strings, so the database always
+> treats it as data.
 
 Under it, the evidence:
 
@@ -149,4 +149,5 @@ is no request data in the statement for this check to report.
 - [SQL injection in Python](https://eyalsec.com/vulnerabilities/sql-injection)
 - [Taint sources](https://eyalsec.com/docs/taint-sources): what **socket** and
   the other sources mark
+- The runnable file: [`flask_sql_injection.py`](flask_sql_injection.py)
 - [Rules](https://eyalsec.com/docs/rules): hide a flow you expect, or block one

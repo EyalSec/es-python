@@ -31,7 +31,8 @@ says it plainly: only unpickle data you trust.
 
 ## Run it under es-python
 
-Set the **socket** source to **On** in the machine's **Configure** window, then:
+A new machine already watches network input (**socket**); check it is **On**
+in the machine's **Configure** window, then:
 
 ```bash
 es-python app.py
@@ -57,7 +58,7 @@ severity **Critical**. Its **What this means** block reads:
 > network may use this code injection to run their own code on the machine,
 > with every permission this program has.
 >
-> **What to do:** Do not run data as code. If you need structured input, parse
+> **What to do:** Keep data as data. If you need structured input, parse
 > it as data (JSON) instead of `eval`/`exec`. If you need to pick behaviour,
 > look the input up in a fixed table of allowed choices.
 
@@ -72,8 +73,8 @@ Below it:
 | **Origin** | the network connection the request came in on |
 
 The event fires on the benign cart above for the same reason it would fire on a
-malicious one: untrusted bytes reached a deserializer that can run code. That is
-the finding. Whether today's traffic happens to be friendly does not change it.
+malicious one: untrusted bytes reached a deserializer that can run code. So you
+see the exposure before anyone sends a hostile body.
 
 The values above describe this example; your trace and counts will differ. See
 [Event detail](https://eyalsec.com/docs/event-detail).
@@ -110,11 +111,11 @@ def restore_cart():
 
 If the cart has to survive a round trip through the client and come back
 unchanged, sign it (Flask's own session cookie does this with JSON and
-`itsdangerous`) and still never unpickle it. Do not add an `object_hook` that
-builds arbitrary classes from the JSON either: that brings the same problem
-back.
+`itsdangerous`) and still never unpickle it. An `object_hook` that builds
+arbitrary classes from the JSON would bring the same problem back.
 
 ## Related
 
 - [Insecure deserialization in Python](https://eyalsec.com/vulnerabilities/insecure-deserialization)
 - [Code injection in Python](https://eyalsec.com/vulnerabilities/code-injection)
+- The runnable file: [`pickle_deserialization.py`](pickle_deserialization.py)

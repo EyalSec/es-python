@@ -32,7 +32,8 @@ as syntax (`;`, `|`, `$( )`, backticks) is executed, not passed to `ping`.
 
 ## Run it under es-python
 
-Set the **socket** source to **On** in the machine's **Configure** window, then:
+A new machine already watches network input (**socket**); check it is **On**
+in the machine's **Configure** window, then:
 
 ```bash
 es-python app.py
@@ -59,9 +60,8 @@ block reads:
 > network may use this command injection to run operating-system commands on
 > the machine, as the user this program runs as.
 >
-> **What to do:** Do not build a command line out of this value. Use
-> `subprocess.run([prog, arg])` with a list and no `shell=True`, so the shell
-> never sees it.
+> **What to do:** Use `subprocess.run([prog, arg])` with a list and no
+> `shell=True`, so the shell never sees this value.
 
 The sentence names two calls because one check covers both ways a process can
 be started, and the event does not say which one ran. Below it:
@@ -131,3 +131,4 @@ validation is what keeps it out.
 - [Command injection in Python](https://eyalsec.com/vulnerabilities/command-injection)
 - [Ready-made rule templates](https://eyalsec.com/docs/rule-templates#ready-made),
   including one for blocking critical attacks
+- The runnable file: [`subprocess_command_injection.py`](subprocess_command_injection.py)
