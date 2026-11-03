@@ -10,8 +10,8 @@ and how it runs your code. The format follows
   supported distribution, architecture or Python version; a new command or flag.
 - **Changed**: an event that now reads, grades or groups differently; a change
   to what a machine sends.
-- **Fixed**: a flow that was missed and is now reported; an event that fired
-  when it should not have; an install or compatibility problem.
+- **Fixed**: detection and reporting improvements; install and compatibility
+  work.
 - **Removed**: a flag, a source or a platform that is no longer supported,
   announced one release ahead where we can.
 - **Security**: a fix for a vulnerability in EyalSec itself, with credit to the
@@ -43,5 +43,5 @@ Nothing recorded yet.
 - [[what is now watched or supported]] ([#[[issue]]](https://github.com/EyalSec/es-python/issues/[[issue]]))
 
 ### Fixed
-- [[what was missed or wrong, and what happens now]]
+- [[what changed, and what happens now]]
 -->

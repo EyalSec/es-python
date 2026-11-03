@@ -1,5 +1,5 @@
 name: Bug report
-description: A flow that was missed, an event that looks wrong, or an install or compatibility problem.
+description: A flow or an event you want us to look at, or an install or compatibility question.
 title: "[bug] "
 labels: ["bug", "needs-triage"]
 body:
@@ -13,8 +13,8 @@ body:
     attributes:
       label: What kind of problem is it?
       options:
-        - A flow was not reported (missed detection)
-        - An event fired that should not have (false positive)
+        - A flow I expected is not in my events
+        - An event I want you to look at
         - An event reads wrong (severity, label, explanation, evidence)
         - Install or update problem
         - My program behaves differently under es-python

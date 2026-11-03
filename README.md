@@ -154,8 +154,7 @@ every item comes with the path from where it entered to where it was used.
   does nothing for SQL, and the event says which. Where no proof is possible
   (LDAP has no bind-parameter mechanism) the event says "attacker data reached
   the filter", not "injection proven".
-- **You choose what it watches.** The CPU cost scales with the sources you
-  switch on; a file-heavy program watching every read pays the most. Measure
+- **You choose what it watches.** Switch on the sources you want, and measure
   it on your own workload.
 - **Blocking is opt-in** and enabled per account. At a small number of
   operations that cannot be interrupted part-way, the error is raised
