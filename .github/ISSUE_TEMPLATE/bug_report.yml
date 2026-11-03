@@ -69,7 +69,7 @@ body:
     id: event_json
     attributes:
       label: The event JSON
-      description: From `GET /api/event/{id}` (see https://eyalsec.com/docs/api-events#event-detail), or the sink label, severity and source as the dashboard shows them. Leave empty for a missed detection. Redact secrets and personal data first.
+      description: From `GET /api/event/{id}` (see https://eyalsec.com/docs/api-events#event-detail), or the sink label, severity and source as the dashboard shows them. Leave empty if you have no event yet. Redact secrets and personal data first.
       render: json
   - type: textarea
     id: frameworks
