@@ -6,6 +6,7 @@
 
 [![Website](https://img.shields.io/badge/website-eyalsec.com-e8b04b)](https://eyalsec.com)
 [![Docs](https://img.shields.io/badge/docs-user%20guide-2a2c27)](https://eyalsec.com/docs)
+[![Live attack demo](https://img.shields.io/badge/live%20attack%20demo-vp.eyalsec.com-black.svg)](https://vp.eyalsec.com)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/EyalSec/es-python/badge)](https://scorecard.dev/viewer/?uri=github.com/EyalSec/es-python)
 
 **For:** AppSec and security engineers, and the backend teams they work with,
@@ -174,6 +175,13 @@ reported.
 **[Book a live demo](https://eyalsec.com/contact)** and we run it on your own
 code with you. There is no self-serve plan and no trial; pricing is metered by
 machines and events ([eyalsec.com/pricing](https://eyalsec.com/pricing)).
+
+**See it live at [vp.eyalsec.com](https://vp.eyalsec.com).** A public web app
+built with real security holes (SQL injection, command injection, unsafe file
+paths and more) runs on es-python. Send it an attack from your browser:
+es-python stops it and shows the attack it stopped. The app is open source
+([vulnerable-python](https://github.com/EyalSec/vulnerable-python)), so you can
+read the code you are attacking.
 
 ## Learn more
 
